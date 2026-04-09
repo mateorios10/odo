@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Odontología Integral Estética Katra-Peix | Buenos Aires</title>
+<meta name="description" content="Clínica dental de excelencia en Buenos Aires. Odontología integral y estética con atención personalizada. Av. San Martín 7026, CABA. Tel: 011 5563-8865">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blanco: #fbfbfd;
+    --gris-claro: #afafaf;
+    --antracita: #2d2c2c;
+    --beige: #e2e1dc;
+    --ciruela: #702659;
+    --ciruela-light: rgba(112, 38, 89, 0.08);
+    --ciruela-mid: rgba(112, 38, 89, 0.15);
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--blanco);
+    color: var(--antracita);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 60px;
+    background: rgba(251,251,253,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(112,38,89,0.1);
+    transition: padding 0.3s;
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--antracita);
+    line-height: 1.2;
+  }
+  .nav-logo span { color: var(--ciruela); }
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a {
+    font-size: 0.8rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--antracita); text-decoration: none;
+    position: relative; padding-bottom: 2px;
+  }
+  .nav-links a::after {
+    content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px;
+    background: var(--ciruela); transition: width 0.3s;
+  }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-cta {
+    background: var(--ciruela); color: var(--blanco) !important;
+    padding: 10px 24px; border-radius: 2px;
+    font-size: 0.75rem !important; font-weight: 600 !important;
+    letter-spacing: 0.14em !important;
+    transition: background 0.2s, transform 0.2s !important;
+  }
+  .nav-cta::after { display: none !important; }
+  .nav-cta:hover { background: #5a1e46 !important; transform: translateY(-1px); }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+    background-image: url('./images/hero-odontologia.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(0.85);
+  }
+  #hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, rgba(251,251,253,0.6) 0%, rgba(251,251,253,0.8) 50%, rgba(251,251,253,0.9) 100%);
+    z-index: 1;
+  }
+  #hero::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 140px 60px 80px 60px;
+    position: relative; z-index: 2;
+  }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 1rem; font-weight: 700; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--ciruela);
+    margin-bottom: 32px;
+  }
+  .hero-tag::before {
+    content: ''; width: 32px; height: 1px; background: var(--ciruela);
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(4rem, 7vw, 6rem);
+    font-weight: 400;
+    line-height: 1.05;
+    color: var(--antracita);
+    margin-bottom: 12px;
+  }
+  .hero-title em {
+    font-style: italic; color: var(--ciruela);
+  }
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--gris-claro);
+    margin-bottom: 44px;
+    letter-spacing: 0.05em;
+  }
+  .hero-desc {
+    font-size: 1.15rem; line-height: 1.9;
+    color: #555; max-width: 480px;
+    margin-bottom: 56px;
+  }
+  .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--ciruela); color: var(--blanco);
+    padding: 18px 42px; border-radius: 4px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.9rem; font-weight: 700; letter-spacing: 0.18em;
+    text-transform: uppercase; text-decoration: none;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    display: inline-block;
+  }
+  .btn-primary:hover {
+    background: #5a1e46; transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(112,38,89,0.25);
+  }
+  .btn-outline {
+    color: var(--antracita); text-decoration: none;
+    font-size: 0.9rem; font-weight: 600; letter-spacing: 0.16em;
+    text-transform: uppercase; padding: 18px 0;
+    border-bottom: 2px solid var(--antracita);
+    transition: color 0.2s, border-color 0.2s;
+    display: inline-block;
+  }
+  .btn-outline:hover { color: var(--ciruela); border-color: var(--ciruela); }
+
+  .btn-floating {
+    position: fixed;
+    bottom: 24px;
+    right: 92px;
+    background: var(--ciruela);
+    color: var(--blanco);
+    padding: 14px 22px;
+    border-radius: 28px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 12px 36px rgba(112,38,89,0.3);
+    transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+    z-index: 999;
+  }
+  .btn-floating:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 42px rgba(112,38,89,0.4);
+    opacity: 0.95;
+  }
+
+  /* Rating badge */
+  .hero-rating {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--beige); padding: 12px 20px; border-radius: 40px;
+    margin-top: 48px; align-self: flex-start;
+  }
+  .stars { color: var(--ciruela); font-size: 1.2rem; letter-spacing: 2px; }
+  .rating-text { font-size: 0.9rem; color: #555; }
+  .rating-text strong { color: var(--antracita); font-weight: 600; }
+
+  /* Hero Right - decorative panel */
+  .hero-right {
+    background: url('images/foto-6.jpg') center/cover no-repeat;
+    position: relative; overflow: hidden;
+  }
+  .hero-right::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.00) 0%, rgba(0,0,0,0.18) 100%),
+      radial-gradient(ellipse 70% 60% at 60% 40%, rgba(112,38,89,0.06) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 50% at 30% 80%, rgba(112,38,89,0.04) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-visual {
+    display: none;
+  }
+  .tooth-icon-large {
+    display: none;
+  }
+
+  .hero-form {
+    position: absolute;
+    top: 50%; right: 150px;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.98);
+    border: 3px solid rgba(112,38,89,0.6);
+    border-radius: 12px;
+    padding: 32px;
+    width: 450px;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.25);
+    color: var(--antracita);
+    z-index: 5;
+  }
+  .hero-form h3 {
+    margin: 0 0 14px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    color: var(--ciruela);
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  }
+  .hero-form .form-group {
+    display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px;
+  }
+  .hero-form label {
+    font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gris-claro);
+  }
+  .hero-form input,
+  .hero-form textarea {
+    font-family: 'Jost', sans-serif;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 10px 12px;
+    font-size: 0.85rem;
+    color: var(--antracita);
+    background: #fff;
+  }
+  .hero-form textarea {
+    min-height: 80px;
+    resize: vertical;
+  }
+  .hero-form .btn-send {
+    width: 100%;
+    border: none;
+    background: var(--ciruela);
+    color: var(--blanco);
+    padding: 10px 0;
+    border-radius: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .hero-form .btn-send:hover {
+    background: #5a1e46;
+    transform: translateY(-1px);
+  }
+  .hero-decor-line {
+    position: absolute;
+    background: var(--ciruela);
+    opacity: 0.15;
+  }
+  .hdl-1 { top: 80px; left: 60px; right: 60px; height: 1px; }
+  .hdl-2 { bottom: 80px; left: 60px; right: 60px; height: 1px; }
+  .hdl-3 { top: 80px; bottom: 80px; left: 60px; width: 1px; }
+  .hero-card {
+    position: absolute;
+    background: var(--blanco);
+    border-radius: 4px;
+    padding: 24px 28px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    animation: float 6s ease-in-out infinite;
+  }
+  .hc-1 { bottom: 100px; left: 50%; transform: translateX(-50%); min-width: 240px; text-align: center; }
+  .hc-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem; font-weight: 300; color: var(--ciruela);
+    line-height: 1;
+  }
+  .hc-label { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gris-claro); margin-top: 4px; }
+  .hc-2 { top: 120px; right: 60px; }
+  .hc-2 .hc-num { font-size: 2rem; }
+  @keyframes float {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-10px); }
+  }
+  .hc-2-float {
+    animation: float2 7s ease-in-out infinite;
+  }
+  @keyframes float2 {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  /* ─── STRIP ─── */
+  .strip {
+    background: var(--ciruela);
+    padding: 20px 0;
+    overflow: hidden;
+    position: relative;
+  }
+  .strip-track {
+    display: flex;
+    gap: 48px;
+    align-items: center;
+    white-space: nowrap;
+    animation: scroll-strip 16s linear infinite;
+  }
+  .strip-item {
+    display: inline-flex; align-items: center; gap: 10px;
+    color: rgba(251,251,253,0.95); font-size: 0.86rem;
+    letter-spacing: 0.1em; white-space: nowrap;
+  }
+  .strip-dot { width: 4px; height: 4px; background: rgba(251,251,253,0.6); border-radius: 50%; }
+  @keyframes scroll-strip {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* ─── SERVICIOS ─── */
+  #servicios {
+    padding: 120px 60px;
+    max-width: 1200px; margin: 0 auto;
+  }
+  .section-header { margin-bottom: 70px; }
+  .section-tag {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--ciruela);
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 20px;
+  }
+  .section-tag::before { content: ''; width: 28px; height: 1px; background: var(--ciruela); }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    font-weight: 300; line-height: 1.15;
+    color: var(--antracita);
+  }
+  .section-title em { font-style: italic; color: var(--ciruela); }
+
+  .servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--beige);
+    border: 1px solid var(--beige);
+  }
+  .servicio-card {
+    background: var(--blanco);
+    padding: 48px 36px;
+    position: relative;
+    cursor: default;
+    transition: background 0.3s, transform 0.3s;
+    overflow: hidden;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    perspective: 1000px;
+  }
+  .servicio-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  .servicio-card:hover .servicio-card-inner {
+    transform: rotateY(180deg);
+  }
+  .servicio-card-front, .servicio-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: inherit;
+  }
+  .servicio-card-back {
+    transform: rotateY(180deg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 20px;
+  }
+  .servicio-card-back::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 1;
+  }
+  .servicio-card::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.4);
+    z-index: 1;
+    transition: background 0.3s;
+  }
+  .servicio-card:hover::before {
+    background: rgba(255,255,255,0.2);
+  }
+  .servicio-card-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .sc-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem; font-weight: 600;
+    color: var(--beige); letter-spacing: 0.1em;
+    margin-bottom: 20px; display: block;
+    transition: color 0.3s;
+  }
+  .sc-icon {
+    width: 44px; height: 44px; margin-bottom: 20px;
+    color: var(--ciruela);
+  }
+  .sc-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; font-weight: 400;
+    color: #000; margin-bottom: 12px;
+  }
+  .sc-desc { font-size: 0.9rem; line-height: 1.7; color: #333; }
+
+  .sc-back-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; font-weight: 400;
+    color: white; margin: 0;
+    text-shadow: 0 0 10px rgba(0,0,0,0.8);
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ─── NOSOTROS ─── */
+  #nosotros {
+    background: var(--antracita);
+    padding: 120px 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  #nosotros::before {
+    content: '';
+    position: absolute; top: 0; right: 0; bottom: 0;
+    width: 40%;
+    background: radial-gradient(ellipse at right center, rgba(112,38,89,0.15), transparent 70%);
+    pointer-events: none;
+  }
+  .nosotros-left .section-tag { color: rgba(226,225,220,0.7); }
+  .nosotros-left .section-tag::before { background: rgba(226,225,220,0.5); }
+  .nosotros-left .section-title { color: var(--beige); }
+  .nosotros-left .section-title em { color: #c06090; }
+  .nosotros-p {
+    font-size: 0.92rem; line-height: 1.9;
+    color: rgba(226,225,220,0.65);
+    margin-bottom: 16px;
+  }
+  .nosotros-p:last-of-type { margin-bottom: 40px; }
+  .nosotros-stats {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px; margin-top: 48px;
+  }
+  .ns-item {
+    background: rgba(255,255,255,0.04);
+    padding: 28px 20px; text-align: center;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .ns-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem; font-weight: 300;
+    color: var(--ciruela); line-height: 1;
+    display: block; margin-bottom: 6px;
+  }
+  .ns-label { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gris-claro); }
+
+  .nosotros-right { position: relative; }
+  .nosotros-img-frame {
+    width: 100%; aspect-ratio: 4/5;
+    background: #fffb;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 2px;
+    display: block; position: relative; overflow: hidden;
+  }
+  .nosotros-img-frame img {
+    display: block;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .nosotros-img-frame::after {
+    content: '';
+    position: absolute; inset: 20px;
+    border: 1px solid rgba(112,38,89,0.3);
+    border-radius: 1px;
+    pointer-events: none;
+  }
+  .frame-inner {
+    text-align: center;
+    color: rgba(255,255,255,0.1);
+  }
+  .frame-inner svg { width: 80px; height: 80px; }
+  .frame-inner p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem; font-style: italic;
+    margin-top: 16px; color: rgba(255,255,255,0.2);
+  }
+  .nosotros-badge {
+    position: absolute; bottom: -20px; right: -20px;
+    background: var(--ciruela);
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    box-shadow: 0 12px 40px rgba(112,38,89,0.4);
+  }
+  .nb-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; font-weight: 600;
+    color: var(--blanco); line-height: 1;
+  }
+  .nb-label { font-size: 0.6rem; letter-spacing: 0.1em; color: rgba(255,255,255,0.7); margin-top: 4px; }
+
+  /* ─── EN ACCIÓN ─── */
+  #en-accion {
+    padding: 120px 60px;
+    max-width: 1200px; margin: 0 auto;
+  }
+  .accion-gallery {
+    position: relative;
+    overflow: hidden;
+    margin-top: 60px;
+  }
+  .scroll-container {
+    mask: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+    -webkit-mask: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+  }
+  .infinite-scroll {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    animation: scroll-right 30s linear infinite;
+  }
+  .accion-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    width: 280px;
+    height: 340px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0;
+  }
+  .accion-item:hover {
+    transform: translateY(-5px) scale(1.04);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.2);
+  }
+  @keyframes scroll-right {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .accion-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+  }
+  .accion-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  .accion-item:hover img {
+    transform: scale(1.02);
+  }
+
+  /* ─── REVIEWS ─── */
+  #reviews {
+    padding: 120px 60px;
+    background: var(--beige);
+    position: relative; overflow: hidden;
+  }
+  #reviews::before {
+    content: '"';
+    position: absolute; top: 40px; right: 80px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20rem; line-height: 1;
+    color: rgba(112,38,89,0.06);
+    pointer-events: none;
+  }
+  .reviews-header {
+    max-width: 1200px; margin: 0 auto 60px;
+    display: flex; justify-content: space-between; align-items: flex-end;
+  }
+  .reviews-grid {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .review-card {
+    background: var(--blanco);
+    padding: 40px 32px;
+    border-radius: 2px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .review-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+  }
+  .review-stars { color: var(--ciruela); font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 20px; }
+  .review-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem; font-style: italic;
+    line-height: 1.7; color: var(--antracita);
+    margin-bottom: 24px;
+  }
+  .review-author {
+    font-size: 0.78rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--gris-claro);
+  }
+  .review-card.featured {
+    background: var(--ciruela); color: var(--blanco);
+  }
+  .review-card.featured .review-text { color: rgba(255,255,255,0.9); }
+  .review-card.featured .review-author { color: rgba(255,255,255,0.5); }
+  .review-card.featured .review-stars { color: rgba(255,255,255,0.7); }
+
+  /* ─── HORARIOS ─── */
+  #contacto {
+    padding: 120px 60px;
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: start;
+  }
+  .horarios-table { width: 100%; }
+  .ht-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--beige);
+    font-size: 0.88rem;
+  }
+  .ht-row:first-child { border-top: 1px solid var(--beige); }
+  .ht-day { font-weight: 500; color: var(--antracita); }
+  .ht-time { color: var(--gris-claro); }
+  .ht-time.open { color: var(--ciruela); font-weight: 500; }
+  .ht-time.closed { color: #ccc; }
+
+  .contact-info { display: flex; flex-direction: column; gap: 24px; }
+  .ci-item {
+    display: flex; gap: 16px; align-items: flex-start;
+  }
+  .ci-map {
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--ciruela-mid);
+  }
+  .ci-icon {
+    width: 44px; height: 44px; min-width: 44px;
+    background: var(--ciruela-light);
+    border-radius: 2px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--ciruela);
+  }
+  .ci-icon svg { width: 20px; height: 20px; }
+  .ci-label { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gris-claro); margin-bottom: 4px; }
+  .ci-value { font-size: 0.92rem; color: var(--antracita); font-weight: 500; }
+  .ci-value a { color: inherit; text-decoration: none; }
+  .ci-value a:hover { color: var(--ciruela); }
+
+  .cta-block {
+    margin-top: 40px;
+    background: var(--beige);
+    padding: 40px;
+    border-radius: 2px;
+    border-left: 3px solid var(--ciruela);
+  }
+  .cta-block h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; font-weight: 400;
+    color: var(--antracita); margin-bottom: 12px;
+  }
+  .cta-block p { font-size: 0.85rem; color: #666; line-height: 1.7; margin-bottom: 24px; }
+  .btn-wa {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: #25d366; color: white;
+    padding: 14px 28px; border-radius: 2px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.78rem; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn-wa:hover { background: #1da855; transform: translateY(-2px); }
+  .btn-wa svg { width: 18px; height: 18px; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--antracita);
+    padding: 60px 60px 40px;
+    color: rgba(226,225,220,0.5);
+    font-size: 0.78rem;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 20px;
+  }
+  footer .footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem; font-weight: 400;
+    color: var(--beige); letter-spacing: 0.04em;
+  }
+  footer .footer-brand span { color: #c06090; }
+
+  /* ─── SCROLL REVEAL ─── */
+  .reveal {
+    opacity: 0; transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  /* ─── HAMBURGER ─── */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 201;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--antracita);
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+    transform-origin: center;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(251,251,253,0.98);
+    backdrop-filter: blur(16px);
+    z-index: 200;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: var(--antracita);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+  .mobile-menu a:hover { color: var(--ciruela); }
+  .mobile-menu .mobile-cta {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    background: var(--ciruela);
+    color: var(--blanco) !important;
+    padding: 16px 40px;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+
+  /* ─── MOBILE ─── */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+
+    /* Hero */
+    #hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .hero-left { padding: 110px 24px 60px; }
+    .hero-title { font-size: clamp(2.8rem, 11vw, 4rem); }
+    .hero-subtitle { font-size: clamp(1.3rem, 5vw, 1.8rem); margin-bottom: 24px; }
+    .hero-desc { font-size: 1rem; margin-bottom: 36px; }
+    .hero-actions { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .btn-primary { padding: 16px 32px; width: 100%; text-align: center; }
+    .btn-outline { padding: 14px 0; }
+
+    /* Floating buttons */
+    .btn-floating { display: none; }
+
+    /* Servicios */
+    #servicios { padding: 70px 20px; }
+    .servicios-grid { grid-template-columns: 1fr; gap: 16px; }
+
+    /* Nosotros */
+    #nosotros { padding: 70px 20px; grid-template-columns: 1fr; }
+    .nosotros-right { display: none; }
+    .nosotros-stats { grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    /* En acción */
+    #en-accion { padding: 70px 20px; }
+    .accion-gallery { grid-template-columns: 1fr; }
+
+    /* Reviews */
+    #reviews { padding: 70px 20px; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .reviews-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+
+    /* Contacto */
+    #contacto { padding: 70px 20px; grid-template-columns: 1fr; }
+
+    /* Footer */
+    footer { padding: 36px 20px; flex-direction: column; text-align: center; gap: 16px; }
+
+    /* Strip */
+    .strip { padding: 12px 20px; gap: 20px; }
+  }
+
+  /* ─── TABLET ─── */
+  @media (min-width: 601px) and (max-width: 900px) {
+    .servicios-grid { grid-template-columns: 1fr 1fr; }
+    .reviews-grid   { grid-template-columns: 1fr 1fr; }
+    .nosotros-stats { grid-template-columns: 1fr 1fr 1fr; }
+    .hero-title     { font-size: clamp(3.2rem, 6vw, 4.2rem); }
+  }
+
+  /* ─── CURSOR PERSONALIZADO ─── */
+  @media (hover: hover) and (pointer: fine) {
+    body, body * { cursor: none !important; }
+
+    .cursor-follower {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 38px;
+      height: 38px;
+      border: 1.5px solid #702659;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 99999;
+      transform: translate(-50%, -50%);
+      transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
+      opacity: 0;
+      will-change: transform;
+    }
+
+    .cursor-follower::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 6px;
+      height: 6px;
+      background: #702659;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .cursor-follower.visible {
+      opacity: 1;
+    }
+
+    .cursor-follower.hovered {
+      width: 54px;
+      height: 54px;
+      opacity: 0.7;
+    }
+  }
+
+  /* ─── WHATSAPP FLOTANTE ─── */
+  @keyframes whatsapp-pulso {
+    0%   { transform: scale(1);    box-shadow: 0 4px 16px rgba(37,211,102,0.4); }
+    50%  { transform: scale(1.1);  box-shadow: 0 4px 28px rgba(37,211,102,0.75); }
+    100% { transform: scale(1);    box-shadow: 0 4px 16px rgba(37,211,102,0.4); }
+  }
+
+  .whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(37,211,102,0.4);
+    animation: whatsapp-pulso 2s ease-in-out infinite;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .whatsapp-btn:hover {
+    background: #1ebe57;
+    animation-play-state: paused;
+  }
+
+  .whatsapp-btn svg {
+    width: 32px;
+    height: 32px;
+    fill: #ffffff;
+  }
+</style>
+</style>
+</head>
+<body>
+
+<div class="cursor-follower"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Katra<span>·</span>Peix<br><small style="font-size:0.7em;font-weight:300;color:var(--gris-claro);letter-spacing:0.06em">Odontología Integral Estética</small></div>
+  <ul class="nav-links">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#reviews">Opiniones</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="https://wa.me/5491155638865" class="nav-cta">Reservá tu turno</a></li>
+  </ul>
+  <button class="nav-hamburger" aria-label="Abrir menú" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MENÚ MOBILE -->
+<div class="mobile-menu" role="dialog" aria-label="Menú de navegación">
+  <a href="#servicios">Servicios</a>
+  <a href="#nosotros">Nosotros</a>
+  <a href="#reviews">Opiniones</a>
+  <a href="#contacto">Contacto</a>
+  <a href="https://wa.me/5491155638865" class="mobile-cta">Reservá tu turno</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <span class="hero-tag reveal">Clínica Dental · Buenos Aires</span>
+    <h1 class="hero-title reveal reveal-delay-1">
+      Tu sonrisa<br><em>merece</em><br>lo mejor
+    </h1>
+    <p class="hero-subtitle reveal reveal-delay-2">Integral · Estética · Personalizada</p>
+    <p class="hero-desc reveal reveal-delay-2">
+      En Odontologia Integral Katra-Peix combinamos tecnología, experiencia y calidez humana para brindarte una atención odontologica de calidad y una experiencia única.
+    </p>
+    <div class="hero-actions reveal reveal-delay-3">
+      <a href="https://wa.me/5491155638865" class="btn-primary">Reservá tu turno</a>
+      <a href="#servicios" class="btn-outline">Ver servicios</a>
+    </div>
+    <div class="hero-rating reveal reveal-delay-3">
+      <span class="stars">★★★★★</span>
+      <span class="rating-text"><strong>5.0</strong> · 88 opiniones verificadas</span>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-decor-line hdl-1"></div>
+    <div class="hero-decor-line hdl-2"></div>
+    <div class="hero-decor-line hdl-3"></div>
+    <div class="hero-visual">
+      <svg class="tooth-icon-large" viewBox="0 0 100 120" fill="currentColor" color="var(--ciruela)">
+        <path d="M50 5 C28 5 15 20 15 38 C15 52 20 62 22 78 C24 92 28 115 38 115 C44 115 46 105 50 95 C54 105 56 115 62 115 C72 115 76 92 78 78 C80 62 85 52 85 38 C85 20 72 5 50 5Z"/>
+      </svg>
+    </div>
+
+    <form class="hero-form" action="#" method="post" onsubmit="
+      event.preventDefault();
+      var nombre  = document.getElementById('consulta-nombre').value.trim();
+      var email   = document.getElementById('consulta-email').value.trim();
+      var mensaje = document.getElementById('consulta-mensaje').value.trim();
+      var texto   = 'Hola! Les escribo desde la web.\n\nNombre: ' + nombre + '\nEmail: ' + email + '\nMensaje: ' + mensaje;
+      window.open('https://wa.me/5491155638865?text=' + encodeURIComponent(texto), '_blank');
+    ">
+      <h3>Hacenos tu consulta</h3>
+      <div class="form-group">
+        <label for="consulta-nombre">Nombre</label>
+        <input id="consulta-nombre" type="text" name="nombre" placeholder="Tu nombre" required>
+      </div>
+      <div class="form-group">
+        <label for="consulta-email">Email</label>
+        <input id="consulta-email" type="email" name="email" placeholder="tu@ejemplo.com" required>
+      </div>
+      <div class="form-group">
+        <label for="consulta-mensaje">Dejanos tu mensaje</label>
+        <textarea id="consulta-mensaje" name="mensaje" placeholder="¿En qué podemos ayudarte?" required></textarea>
+      </div>
+      <button class="btn-send" type="submit">Enviar por WhatsApp</button>
+    </form>
+
+    <div class="hero-card hc-1">
+      <span class="hc-num">5.0</span>
+      <p class="hc-label">Calificación Google</p>
+    </div>
+    <div class="hero-card hc-2 hc-2-float">
+      <span class="hc-num">88+</span>
+      <p class="hc-label">Reseñas</p>
+    </div>
+  </div>
+</section>
+<a href="https://wa.me/5491155638865" class="btn-floating">Reservá tu turno</a>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="strip-track">
+    <div class="strip-item">✦ Atención Personalizada</div>
+    <div class="strip-dot"></div>
+    <div class="strip-item">✦ Urgencias por WhatsApp</div>
+    <div class="strip-dot"></div>
+    <div class="strip-item">✦ Todas las Especialidades</div>
+    <div class="strip-dot"></div>
+    <div class="strip-item">✦ Av. San Martín 7026, CABA</div>
+    <div class="strip-dot"></div>
+    <div class="strip-item">✦ Lun–Vie 9 a 19:30 h</div>
+    <div class="strip-dot"></div>
+    <div class="strip-item">✦ Atención Personalizada</div>
+    <div class="strip-dot"></div>
+    <div class="strip-item">✦ Urgencias por WhatsApp</div>
+    <div class="strip-dot"></div>
+    <div class="strip-item">✦ Todas las Especialidades</div>
+    <div class="strip-dot"></div>
+    <div class="strip-item">✦ Av. San Martín 7026, CABA</div>
+    <div class="strip-dot"></div>
+    <div class="strip-item">✦ Lun–Vie 9 a 19:30 h</div>
+  </div>
+</div>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="section-header reveal">
+    <div class="section-tag">Nuestros servicios</div>
+    <h2 class="section-title">Cuidado completo<br>para tu <em>salud bucal</em></h2>
+  </div>
+  <div class="servicios-grid">
+    <div class="servicio-card reveal servicio-general">
+      <div class="servicio-card-inner">
+        <div class="servicio-card-front">
+          <div class="servicio-card-content">
+            <span class="sc-num">01</span>
+            <svg class="sc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2C8 2 5 5 5 9c0 3 2 5.5 2.5 8.5C8 21 9.5 22 12 22s4-1 4.5-4.5C17 14.5 19 12 19 9c0-4-3-7-7-7z"/>
+            </svg>
+            <h3 class="sc-title">Odontología General</h3>
+            <p class="sc-desc">Diagnóstico, prevención y tratamiento integral de caries, enfermedad periodontal y patologías bucales. Control y seguimiento continuo.</p>
+          </div>
+        </div>
+        <div class="servicio-card-back" style="background-image: url('./images/Odontologíageneral2.jpeg')">
+          <h3 class="sc-back-title">Odontología General</h3>
+        </div>
+      </div>
+    </div>
+    <div class="servicio-card reveal reveal-delay-1 servicio-estetica">
+      <div class="servicio-card-inner">
+        <div class="servicio-card-front">
+          <div class="servicio-card-content">
+            <span class="sc-num">02</span>
+            <svg class="sc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/>
+            </svg>
+            <h3 class="sc-title">Estética Dental</h3>
+            <p class="sc-desc">Diseño de sonrisa, carillas, blanqueamiento profesional y resinas compuestas. Transformamos tu sonrisa con resultados naturales y duraderos.</p>
+          </div>
+        </div>
+        <div class="servicio-card-back" style="background-image: url('./images/Estéticadental2.JPG')">
+          <h3 class="sc-back-title">Diseño de Sonrisa</h3>
+        </div>
+      </div>
+    </div>
+    <div class="servicio-card reveal reveal-delay-2 servicio-ortodoncia">
+      <div class="servicio-card-inner">
+        <div class="servicio-card-front">
+          <div class="servicio-card-content">
+            <span class="sc-num">03</span>
+            <svg class="sc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M6 3v18M18 3v18M6 12h12M3 6h3M18 6h3M3 18h3M18 18h3"/>
+            </svg>
+            <h3 class="sc-title">Ortodoncia</h3>
+            <p class="sc-desc">Brackets metálicos, estéticos y alineadores removibles. Tratamientos para adultos y niños con seguimiento personalizado en cada etapa.</p>
+          </div>
+        </div>
+        <div class="servicio-card-back" style="background-image: url('./images/Ortodoncia2.jpg')">
+          <h3 class="sc-back-title">Ortodoncia</h3>
+        </div>
+      </div>
+    </div>
+    <div class="servicio-card reveal servicio-implantes">
+      <div class="servicio-card-inner">
+        <div class="servicio-card-front">
+          <div class="servicio-card-content">
+            <span class="sc-num">04</span>
+            <svg class="sc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 22s-6-4-6-10a6 6 0 0112 0c0 6-6 10-6 10z"/>
+              <circle cx="12" cy="12" r="2"/>
+            </svg>
+            <h3 class="sc-title">Implantes</h3>
+            <p class="sc-desc">Soluciones permanentes para dientes faltantes mediante estructuras biocompatibles. Funcionalidad y estética con la más alta tecnología disponible.</p>
+          </div>
+        </div>
+        <div class="servicio-card-back" style="background-image: url('./images/Implantes2.png')">
+          <h3 class="sc-back-title">Implantes</h3>
+        </div>
+      </div>
+    </div>
+    <div class="servicio-card reveal reveal-delay-1 servicio-endodoncia">
+      <div class="servicio-card-inner">
+        <div class="servicio-card-front">
+          <div class="servicio-card-content">
+            <span class="sc-num">05</span>
+            <svg class="sc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="8" width="18" height="4" rx="1"/>
+              <path d="M5 12v5a2 2 0 002 2h10a2 2 0 002-2v-5M8 8V6a4 4 0 018 0v2"/>
+            </svg>
+            <h3 class="sc-title">Endodoncia</h3>
+            <p class="sc-desc">Tratamiento de conductos para preservar la pieza dentaria. Técnicas modernas que garantizan el mayor confort durante el procedimiento.</p>
+          </div>
+        </div>
+        <div class="servicio-card-back" style="background-image: url('./images/Endodoncia2.jpg')">
+          <h3 class="sc-back-title">Endodoncia</h3>
+        </div>
+      </div>
+    </div>
+    <div class="servicio-card reveal reveal-delay-2 servicio-periodoncia">
+      <div class="servicio-card-inner">
+        <div class="servicio-card-front">
+          <div class="servicio-card-content">
+            <span class="sc-num">06</span>
+            <svg class="sc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+            <h3 class="sc-title">Periodoncia</h3>
+            <p class="sc-desc">Prevención y tratamiento de enfermedades de las encías. Mantenimiento periodontal para una salud bucal completa y duradera. Tratamiento quirúrgico de la sonrisa gingival, defectos periodontales y encías retraídas.</p>
+          </div>
+        </div>
+        <div class="servicio-card-back" style="background-image: url('./images/Periodoncia2.jpg.png')">
+          <h3 class="sc-back-title">Periodoncia</h3>
+        </div>
+      </div>
+    </div>
+    <div class="servicio-card reveal servicio-protesis">
+      <div class="servicio-card-inner">
+        <div class="servicio-card-front">
+          <div class="servicio-card-content">
+            <span class="sc-num">07</span>
+            <svg class="sc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M6 3h12M6 3a3 3 0 00-3 3v1a3 3 0 003 3h12a3 3 0 003-3V6a3 3 0 00-3-3M6 10v8a2 2 0 002 2h8a2 2 0 002-2v-8"/>
+              <path d="M10 14h4"/>
+            </svg>
+            <h3 class="sc-title">Prótesis</h3>
+            <p class="sc-desc">Restauramos tu sonrisa y funcionalidad de forma íntegra con prótesis fijas y removibles, sobre implantes y sobre dientes naturales con los materiales más duraderos, confortables y estéticos.</p>
+          </div>
+        </div>
+        <div class="servicio-card-back" style="background-image: url('./images/protesis2.jpeg')">
+          <h3 class="sc-back-title">Prótesis</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section id="nosotros">
+  <div class="nosotros-left">
+    <div class="section-tag reveal">Quiénes somos</div>
+    <h2 class="section-title reveal reveal-delay-1">Excelencia y<br><em>calidez humana</em></h2>
+
+    <p class="nosotros-p reveal reveal-delay-2">
+      La Dra. Romina Katra y su equipo dedican el tiempo necesario a cada paciente, escuchando sus necesidades y acompañando el proceso en un marco de confianza y tranquilidad, lo que hace de cada tratamiento una experiencia única.
+    </p>
+    <div class="nosotros-stats reveal reveal-delay-2">
+      <div class="ns-item">
+        <span class="ns-num">5.0</span>
+        <span class="ns-label">Google</span>
+      </div>
+      <div class="ns-item">
+        <span class="ns-num">88+</span>
+        <span class="ns-label">Reseñas</span>
+      </div>
+      <div class="ns-item">
+        <span class="ns-num">∞</span>
+        <span class="ns-label">Paciencia</span>
+      </div>
+    </div>
+  </div>
+  <div class="nosotros-right reveal reveal-delay-1">
+    <div class="nosotros-img-frame">
+      <img src="./images/foto-6.jpg" alt="Equipo Katra-Peix: excelencia y calidez humana" />
+    </div>
+    <div class="nosotros-badge">
+      <span class="nb-num">★ 5</span>
+      <span class="nb-label">Calificación<br>Google</span>
+    </div>
+  </div>
+</section>
+
+<!-- EN ACCIÓN -->
+<section id="en-accion">
+  <div class="section-header reveal">
+    <div class="section-tag">Nuestro trabajo</div>
+    <h2 class="section-title">En <em>acción</em><br>Así cuidamos tu sonrisa</h2>
+  </div>
+  <div class="accion-gallery">
+    <div class="scroll-container">
+      <div class="infinite-scroll">
+        <div class="accion-item">
+          <img src="./images/foto-1.jpg" alt="Profesionales Katra-Peix en acción - procedimiento dental con equipo completo">
+        </div>
+        <div class="accion-item">
+          <img src="./images/foto-2.jpg" alt="Dra. Romina y equipo realizando tratamiento dental - atención personalizada">
+        </div>
+        <div class="accion-item">
+          <img src="./images/foto-3.jpg" alt="Dentista durante procedimiento - tecnología y profesionalismo">
+        </div>
+        <div class="accion-item">
+          <img src="./images/foto-4.jpg" alt="Profesionales realizando tratamiento dental - cirugía y precisión">
+        </div>
+        <div class="accion-item">
+          <img src="./images/foto-6.jpg" alt="Dra. Romina analizando radiografías - diagnóstico y precisión dental">
+        </div>
+        <!-- Duplicados para loop infinito -->
+        <div class="accion-item">
+          <img src="./images/foto-1.jpg" alt="Profesionales Katra-Peix en acción - procedimiento dental con equipo completo">
+        </div>
+        <div class="accion-item">
+          <img src="./images/foto-2.jpg" alt="Dra. Romina y equipo realizando tratamiento dental - atención personalizada">
+        </div>
+        <div class="accion-item">
+          <img src="./images/foto-3.jpg" alt="Dentista durante procedimiento - tecnología y profesionalismo">
+        </div>
+        <div class="accion-item">
+          <img src="./images/foto-4.jpg" alt="Profesionales realizando tratamiento dental - cirugía y precisión">
+        </div>
+        <div class="accion-item">
+          <img src="./images/foto-6.jpg" alt="Dra. Romina analizando radiografías - diagnóstico y precisión dental">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="reviews-header">
+    <div>
+      <div class="section-tag reveal">Testimonios</div>
+      <h2 class="section-title reveal reveal-delay-1">Lo que dicen<br>nuestros <em>pacientes</em></h2>
+    </div>
+    <a href="https://www.google.com/maps/place/Odontologia+Integral+Est%C3%A9tica+Katra-+Peix/@-34.5912469,-58.5156292,17z/data=!3m1!4b1!4m6!3m5!1s0x95bcb7d7e37d1f67:0xc3076ac79676d6b9!8m2!3d-34.5912513!4d-58.5130543!16s%2Fg%2F11h21z4pqh?entry=ttu&g_ep=EgoyMDI2MDQwNS4wIKXMDSoASAFQAw%3D%3D" class="btn-outline reveal" style="color:var(--antracita)" target="_blank" rel="noopener noreferrer">Ver todas las reseñas →</a>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card featured reveal">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Romina me atendió con urgencia, con toda la paciencia del mundo con mis miedos. Excelente la atención pre y post procedimiento."</p>
+      <span class="review-author">Miguel Courts</span>
+    </div>
+    <div class="review-card reveal reveal-delay-1">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"La doctora Romina es una excelente profesional y es súper amable. Siempre encuentra un espacio para atenderme. La súper recomiendo."</p>
+      <span class="review-author">MAJE — Local Guide</span>
+    </div>
+    <div class="review-card reveal reveal-delay-2">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Excelente atención, grandes profesionales y con gran disponibilidad de turnos. Agradezco el buen trato, siempre hacen sentir cómodo al paciente."</p>
+      <span class="review-author">Paciente verificado</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" style="padding-top:120px;padding-bottom:120px;">
+  <div>
+    <div class="section-tag reveal">Horarios de atención</div>
+    <h2 class="section-title reveal reveal-delay-1" style="margin-bottom:40px">Estamos aquí<br>para <em>atenderte</em></h2>
+    <div class="horarios-table reveal reveal-delay-1">
+      <div class="ht-row"><span class="ht-day">Lunes a Viernes</span><span class="ht-time open">9:00 – 19:00 h</span></div>
+    </div>
+  </div>
+  <div>
+    <div class="contact-info reveal">
+      <div class="ci-item">
+        <div class="ci-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <div>
+          <p class="ci-label">Dirección</p>
+          <p class="ci-value">Av. San Martín 7026 4° A<br>CABA, Buenos Aires</p>
+        </div>
+      </div>
+      <div class="ci-map reveal">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.0!2d-58.5156292!3d-34.5912469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb7d7e37d1f67%3A0xc3076ac79676d6b9!2sOdontologia%20Integral%20Est%C3%A9tica%20Katra-%20Peix!5e0!3m2!1ses!2sar!4v1"
+          width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade" title="Ubicación Katra-Peix">
+        </iframe>
+      </div>
+      <div class="ci-item">
+        <div class="ci-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.5a19.79 19.79 0 01-3-8.59A2 2 0 012.11 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l.45-.45a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+          </svg>
+        </div>
+        <div>
+          <p class="ci-label">Teléfono</p>
+          <p class="ci-value"><a href="tel:01155638865">011 5563-8865</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="cta-block reveal reveal-delay-1">
+      <h3>¿Necesitás un turno?</h3>
+      <p>Escribinos por WhatsApp y nos contactamos a la brevedad. Atendemos urgencias con prioridad.</p>
+      <a href="https://wa.me/5491155638865?text=Hola!%20Quisiera%20sacar%20un%20turno" class="btn-wa">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        Escribir por WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Katra<span>·</span>Peix — Odontología Integral Estética</div>
+  <div>Av. San Martín 7026 4°A · CABA · <a href="tel:01155638865" style="color:inherit">011 5563-8865</a></div>
+  <div>© 2025 · Todos los derechos reservados</div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => io.observe(el));
+
+  // Nav shrink
+  window.addEventListener('scroll', () => {
+    document.querySelector('nav').style.padding = window.scrollY > 60 ? '12px 60px' : '20px 60px';
+  });
+
+  // Hamburger menu
+  (function () {
+    const btn  = document.querySelector('.nav-hamburger');
+    const menu = document.querySelector('.mobile-menu');
+    if (!btn || !menu) return;
+
+    function toggleMenu(open) {
+      btn.classList.toggle('open', open);
+      menu.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+
+    btn.addEventListener('click', () => toggleMenu(!menu.classList.contains('open')));
+
+    menu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => toggleMenu(false));
+    });
+  })();
+
+  // Cursor follower — solo en dispositivos con mouse real
+  (function () {
+    const isTouchOnly = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+    if (isTouchOnly) return;
+
+    const follower = document.querySelector('.cursor-follower');
+    if (!follower) return;
+
+    let mouseX = 0, mouseY = 0;
+    let curX = 0, curY = 0;
+    const speed = 0.12; // factor lerp: 0 = sin movimiento, 1 = instantáneo
+
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      follower.classList.add('visible');
+    });
+
+    document.addEventListener('mouseleave', () => {
+      follower.classList.remove('visible');
+    });
+
+    const clickables = 'a, button, [role="button"], input, label, select, textarea';
+    document.querySelectorAll(clickables).forEach(el => {
+      el.addEventListener('mouseenter', () => follower.classList.add('hovered'));
+      el.addEventListener('mouseleave', () => follower.classList.remove('hovered'));
+    });
+
+    function loop() {
+      curX += (mouseX - curX) * speed;
+      curY += (mouseY - curY) * speed;
+      follower.style.left = curX + 'px';
+      follower.style.top  = curY + 'px';
+      requestAnimationFrame(loop);
+    }
+    loop();
+  })();
+</script>
+
+<a href="https://wa.me/5491155638865" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+</body>
+</html>
